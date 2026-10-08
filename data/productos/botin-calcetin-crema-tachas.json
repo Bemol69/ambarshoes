@@ -1,0 +1,19 @@
+{
+  "nombre": "Botín Calcetín Crema · Tachas",
+  "precio": 24900,
+  "foto": "/img/productos/botin-calcetin-crema-tachas.jpg",
+  "fotos": [
+    "/img/productos/botin-calcetin-crema-tachas-2.jpg"
+  ],
+  "descripcion": "9 cm de plataforma, eco cuero, horma normal.",
+  "tallas": [
+    "37",
+    "39",
+    "40"
+  ],
+  "incluye": [],
+  "etiqueta": "Últimos pares",
+  "orden": 50,
+  "agotado": false,
+  "visible": true
+}

@@ -1,0 +1,10 @@
+{
+  "nombre": "Calcetín",
+  "productos": [
+    "botin-calcetin-gamuza-negro",
+    "botin-calcetin-eco-cuero-negro",
+    "botin-calcetin-crema-tachas"
+  ],
+  "orden": 30,
+  "visible": true
+}

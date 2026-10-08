@@ -1,0 +1,22 @@
+{
+  "nombre": "Botín 2 en 1 · Cadena",
+  "precio": 19900,
+  "foto": "/img/productos/botin-2-en-1-cadena.jpg",
+  "fotos": [
+    "/img/productos/botin-2-en-1-cadena-2.jpg"
+  ],
+  "descripcion": "Modelo 2 en 1: úsalo como quieras. Eco cuero, horma normal.",
+  "tallas": [
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40"
+  ],
+  "incluye": [],
+  "etiqueta": "Reposición",
+  "orden": 70,
+  "agotado": false,
+  "visible": true
+}

@@ -1,0 +1,20 @@
+{
+  "nombre": "Botín Calcetín Gamuza · Negro",
+  "precio": 24900,
+  "foto": "/img/productos/botin-calcetin-gamuza-negro.jpg",
+  "fotos": [
+    "/img/productos/botin-calcetin-gamuza-negro-2.jpg"
+  ],
+  "descripcion": "Furor de alto impacto: gamuza, caña calcetín y suela trac. Horma normal.",
+  "tallas": [
+    "36",
+    "38",
+    "39",
+    "40"
+  ],
+  "incluye": [],
+  "etiqueta": "Últimos pares",
+  "orden": 30,
+  "agotado": false,
+  "visible": true
+}

@@ -1,0 +1,11 @@
+{
+  "nombre": "Plataformas",
+  "productos": [
+    "bota-cana-alta-plataforma",
+    "botin-calcetin-crema-tachas",
+    "botin-plataforma-tachas",
+    "botin-2-en-1-cadena"
+  ],
+  "orden": 10,
+  "visible": true
+}

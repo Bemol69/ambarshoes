@@ -1,0 +1,353 @@
+# Configuración del panel /admin (Sveltia CMS)
+# Cada cambio que se guarda aquí crea un commit en GitHub.
+# Vercel arma la web (scripts/build.mjs) y la publica en ~30 segundos.
+
+backend:
+  name: github
+  repo: %%GITHUB_REPO%%
+  branch: main
+  commit_messages:
+    create: "Catálogo: crea {{collection}} «{{slug}}»"
+    update: "Catálogo: actualiza {{collection}} «{{slug}}»"
+    delete: "Catálogo: elimina {{collection}} «{{slug}}»"
+    uploadMedia: "Catálogo: sube foto {{path}}"
+    deleteMedia: "Catálogo: elimina foto {{path}}"
+
+site_url: %%SITE_URL%%
+display_url: %%SITE_URL%%
+logo_url: ../img/logo.jpg
+
+media_folder: img/productos
+public_folder: /img/productos
+
+# Nombres de archivo sin tildes ni ñ (ej: "Botín Calcetín · Negro" -> botin-calcetin-negro.json)
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Las fotos del celular se achican y convierten a WebP al subirlas, para que la web cargue rápido
+media_libraries:
+  default:
+    config:
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 1200
+          height: 1200
+
+collections:
+  # ---------- CATEGORÍAS (filtros del catálogo) ----------
+  - name: categorias
+    label: Categorías
+    label_singular: categoría
+    description: "Los filtros del catálogo (Plataformas, Gamuza…). Abre uno para elegir qué productos aparecen en él."
+    icon: filter_list
+    folder: data/categorias
+    format: json
+    create: true
+    delete: true
+    identifier_field: nombre
+    slug: "{{nombre}}"
+    summary: "{{nombre}}"
+    sortable_fields:
+      fields: [orden, nombre]
+      default:
+        field: orden
+        direction: ascending
+    fields:
+      - name: nombre
+        label: Nombre del filtro
+        widget: string
+        hint: "Así aparece en la web. Ej: Plataformas"
+
+      - name: productos
+        label: Productos en este filtro
+        widget: relation
+        collection: productos
+        value_field: "{{slug}}"
+        search_fields: [nombre]
+        display_fields: ["{{nombre}} · ${{precio}}"]
+        multiple: true
+        required: false
+        hint: "Busca y marca los productos. Un mismo producto puede estar en varios filtros. Para moverlo, quítalo de aquí y agrégalo en el otro."
+
+      - name: orden
+        label: Posición
+        widget: number
+        value_type: int
+        default: 100
+        hint: "Los números más bajos aparecen primero en la barra de filtros."
+
+      - name: visible
+        label: Mostrar en la web
+        widget: boolean
+        default: true
+        hint: "Desactívalo para esconder el filtro sin borrarlo (ej: sin stock por un tiempo)."
+
+  # ---------- PRODUCTOS ----------
+  - name: productos
+    label: Productos
+    label_singular: producto
+    description: "Todos los modelos del álbum. Para que un producto aparezca en un filtro, agrégalo desde Categorías."
+    icon: storefront
+    folder: data/productos
+    format: json
+    create: true
+    delete: true
+    identifier_field: nombre
+    slug: "{{nombre}}"
+    summary: "{{nombre}} · ${{precio}}"
+    thumbnail: foto
+    sortable_fields:
+      fields: [orden, nombre, precio]
+      default:
+        field: orden
+        direction: ascending
+    fields:
+      - name: nombre
+        label: Nombre del producto
+        widget: string
+        hint: "Ej: Botín Calcetín Eco Cuero · Negro"
+
+      - name: precio
+        label: Precio
+        widget: number
+        value_type: int
+        min: 0
+        hint: "Solo números, sin puntos ni signo $. Ej: 24900"
+
+      - name: foto
+        label: Foto principal
+        widget: image
+        hint: "La que se ve en el catálogo. Ideal una foto cuadrada, con el par bien visible."
+
+      - name: fotos
+        label: Más fotos
+        label_singular: foto
+        widget: list
+        required: false
+        field:
+          name: foto
+          label: Foto
+          widget: image
+        hint: "Opcional. Otro ángulo, un detalle o la suela. La primera aparece al pasar el mouse sobre el producto."
+
+      - name: descripcion
+        label: Descripción
+        widget: text
+        required: false
+        hint: "Opcional. Una o dos frases: material y horma. Ej: Eco cuero, horma normal. Los números NO van aquí: van en el campo de abajo."
+
+      - name: tallas
+        label: Números disponibles
+        label_singular: número
+        widget: list
+        required: false
+        field:
+          name: talla
+          label: Número
+          widget: string
+          pattern: ['^[0-9]{2}$', "Solo el número, ej: 38"]
+        hint: "Un número por línea (botón «Agregar número»). Ej: 36, 37, 38. Cuando se agote un número, bórralo de aquí."
+
+      - name: incluye
+        label: Qué incluye
+        label_singular: ítem
+        widget: list
+        required: false
+        field:
+          name: item
+          label: Ítem
+          widget: string
+        hint: "Opcional. Un ítem por línea. Ej: Cordones de repuesto."
+
+      - name: etiqueta
+        label: Etiqueta
+        widget: string
+        required: false
+        hint: "Opcional. Aparece sobre la foto. Ej: Últimos pares, Reposición, Oferta."
+
+      - name: orden
+        label: Posición
+        widget: number
+        value_type: int
+        default: 1000
+        hint: "Los números más bajos aparecen primero. El primero se muestra en grande."
+
+      - name: agotado
+        label: Agotado
+        widget: boolean
+        default: false
+        hint: "Si está activado, se muestra 'Consultar stock' en vez de 'Agregar'."
+
+      - name: visible
+        label: Mostrar en la web
+        widget: boolean
+        default: true
+        hint: "Desactívalo para ocultar el producto sin borrarlo."
+
+  # ---------- CÓDIGOS DE DESCUENTO ----------
+  - name: cupones
+    label: Códigos de descuento
+    label_singular: código de descuento
+    description: "Códigos que tus clientas escriben en la bolsa. La web les dice si es válido y el descuento llega calculado en el mensaje de WhatsApp."
+    icon: sell
+    folder: data/cupones
+    format: json
+    create: true
+    delete: true
+    identifier_field: titulo
+    slug: "{{titulo}}"
+    summary: "{{codigo}} · {{titulo}} · {{activo}}"
+    sortable_fields:
+      fields: [titulo, codigo, vence]
+    fields:
+      - name: titulo
+        label: Título
+        widget: string
+        hint: "Para que tú lo reconozcas y la clienta lo vea al aplicarlo. Ej: Bienvenida 10%, Cyber Ambar."
+
+      - name: codigo
+        label: Código
+        widget: string
+        pattern: ['^[A-Za-z0-9-]{3,20}$', "Entre 3 y 20 letras, números o guiones, sin espacios ni tildes. Ej: AMBAR10"]
+        hint: "Lo que la clienta escribe. Da lo mismo si lo escribe con mayúsculas o minúsculas. Ideas: AMBAR10, CYBER, REGALO-CAMI."
+
+      - name: tipo
+        label: Tipo de descuento
+        widget: select
+        options:
+          - { label: "Porcentaje (%)", value: porcentaje }
+          - { label: "Monto fijo en pesos ($)", value: monto }
+        default: porcentaje
+
+      - name: valor
+        label: Descuento
+        widget: number
+        value_type: int
+        min: 1
+        hint: "Solo el número. Si es porcentaje: 10 = 10% de descuento. Si es monto fijo: 3000 = $3.000 menos en el pedido."
+
+      - name: categorias
+        label: Aplica a estas categorías
+        widget: relation
+        collection: categorias
+        value_field: "{{slug}}"
+        search_fields: [nombre]
+        display_fields: [nombre]
+        multiple: true
+        required: false
+        hint: "Opcional. Ej: solo «Plataformas». Si dejas vacías las categorías Y los productos, el código sirve para toda la tienda."
+
+      - name: productos
+        label: Aplica a estos productos
+        widget: relation
+        collection: productos
+        value_field: "{{slug}}"
+        search_fields: [nombre]
+        display_fields: ["{{nombre}} · ${{precio}}"]
+        multiple: true
+        required: false
+        hint: "Opcional. Se suma a las categorías de arriba."
+
+      - name: minimo
+        label: Compra mínima
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+        hint: "Opcional. Monto mínimo (en productos donde aplica el código). Ej: 40000. Vacío = sin mínimo."
+
+      - name: vence
+        label: Válido hasta
+        widget: datetime
+        format: "YYYY-MM-DD"
+        time_format: false
+        required: false
+        hint: "Opcional. El código deja de funcionar al terminar ese día. Vacío = sin fecha de término."
+
+      - name: activo
+        label: Activo
+        widget: boolean
+        default: true
+        hint: "Apágalo para pausar una promo sin borrarla."
+
+  # ---------- AJUSTES (contacto y portada, editables por la dueña) ----------
+  - name: ajustes
+    label: Ajustes de la tienda
+    icon: settings
+    files:
+      - name: ajustes
+        label: Contacto y portada
+        file: data/ajustes.json
+        format: json
+        fields:
+          - name: whatsapp
+            label: WhatsApp para pedidos
+            widget: string
+            pattern: ['^\+?[0-9 ]{10,17}$', "Formato internacional, ej: 56912345678"]
+            hint: "Con código de país y sin +. Ej: 56912345678. Aquí llegan todos los pedidos."
+          - { name: instagram, label: Usuario de Instagram, widget: string, required: false, hint: "Sin @. Ej: ambarshoes.cl" }
+          - { name: tiktok, label: Usuario de TikTok, widget: string, required: false, hint: "Sin @. Déjalo vacío para ocultarlo." }
+          - { name: email, label: Correo, widget: string, required: false }
+          - { name: ciudad, label: Ciudad o país de operación, widget: string, hint: "Ej: Chile" }
+          - { name: envios, label: Cobertura de envíos, widget: string, required: false, hint: "Ej: Envíos a todo Chile" }
+          - name: empresas_envio
+            label: Empresas de envío
+            widget: select
+            multiple: true
+            options: [Blue Express, Starken, Correos de Chile]
+            default: [Blue Express, Starken, Correos de Chile]
+            hint: "Las que la clienta puede elegir al pedir un envío."
+          - { name: seguidores, label: Seguidoras en Instagram, widget: string, required: false, hint: "Aparece en la portada. Ej: 44,1 mil" }
+          - { name: publicaciones, label: Publicaciones en Instagram, widget: string, required: false, hint: "Ej: 168" }
+          - { name: hero_titulo, label: Título de la portada, widget: string, hint: "Ej: Plataformas y botines que" }
+          - { name: hero_destacado, label: Parte destacada del título, widget: string, hint: "Va resaltada sobre una etiqueta negra. Ej: se ven carísimos" }
+          - { name: hero_bajada, label: Texto bajo el título, widget: text }
+
+  # ---------- PROMOS Y CINTA (portada, editables por la dueña) ----------
+  - name: inicio
+    label: Promos y cinta de embalaje
+    description: "Las promos bajo la portada (hasta 4) y las frases de la cinta que se mueve."
+    icon: campaign
+    files:
+      - name: promos
+        label: Promos (cupones de la portada)
+        file: data/promos.json
+        format: json
+        fields:
+          - name: promos
+            label: Promos
+            label_singular: promo
+            widget: list
+            max: 4
+            summary: "{{titulo}} · ${{precio}}"
+            hint: "Hasta 4. Se ven como cupones bajo la portada. Ej: «2 pares» a 28000."
+            fields:
+              - { name: titulo, label: Título, widget: string, hint: "Ej: 2 pares, Todo el álbum" }
+              - { name: precio, label: Precio, widget: number, value_type: int, min: 0, hint: "Solo números, sin puntos. Ej: 28000" }
+              - { name: texto, label: Bajada, widget: string, required: false, hint: "Ej: Combínalos como quieras" }
+
+      - name: franjas
+        label: Cinta de embalaje
+        file: data/franjas.json
+        format: json
+        fields:
+          - name: cinta
+            label: Cinta
+            widget: object
+            fields:
+              - name: frases
+                label: Frases
+                label_singular: frase
+                widget: list
+                min: 1
+                field: { name: frase, label: Frase, widget: string }
+                hint: "Una frase corta por línea (2 a 5 palabras). Ej: Frágil · con amor, Envíos a todo Chile."
+              - name: velocidad
+                label: Velocidad
+                widget: select
+                options: [{ label: Lenta, value: lenta }, { label: Normal, value: normal }, { label: Rápida, value: rapida }]
+                default: normal

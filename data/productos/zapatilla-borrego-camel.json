@@ -1,0 +1,22 @@
+{
+  "nombre": "Zapatilla Borrego · Camel",
+  "precio": 12900,
+  "foto": "/img/productos/zapatilla-borrego-camel.jpg",
+  "fotos": [
+    "/img/productos/zapatilla-borrego-camel-2.jpg"
+  ],
+  "descripcion": "El más pedido ha vuelto. Con cordones de repuesto, horma normal.",
+  "tallas": [
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40"
+  ],
+  "incluye": [],
+  "etiqueta": "Más pedido",
+  "orden": 90,
+  "agotado": false,
+  "visible": true
+}

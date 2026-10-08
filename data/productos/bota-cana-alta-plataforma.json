@@ -1,0 +1,21 @@
+{
+  "nombre": "Bota Caña Alta · Plataforma",
+  "precio": 28900,
+  "foto": "/img/productos/bota-cana-alta-plataforma.jpg",
+  "fotos": [
+    "/img/productos/bota-cana-alta-plataforma-2.jpg"
+  ],
+  "descripcion": "Eco cuero, horma normal. Caña alta con plataforma para marcar el paso.",
+  "tallas": [
+    "36",
+    "37",
+    "38",
+    "39",
+    "40"
+  ],
+  "incluye": [],
+  "etiqueta": "Premium",
+  "orden": 10,
+  "agotado": false,
+  "visible": true
+}

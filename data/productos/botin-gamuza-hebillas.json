@@ -1,0 +1,20 @@
+{
+  "nombre": "Botín Gamuza Negro · Hebillas",
+  "precio": 19900,
+  "foto": "/img/productos/botin-gamuza-hebillas.jpg",
+  "fotos": [
+    "/img/productos/botin-gamuza-hebillas-2.jpg"
+  ],
+  "descripcion": "Símil gamuza negro con hebillas y tachas, horma normal. En oferta.",
+  "tallas": [
+    "36",
+    "37",
+    "38",
+    "39"
+  ],
+  "incluye": [],
+  "etiqueta": "Oferta",
+  "orden": 80,
+  "agotado": false,
+  "visible": true
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>%%SEO_TITULO%%</title>
+  <meta name="description" content="%%SEO_DESCRIPCION%%">
+  <meta name="theme-color" content="%%COLOR_TINTA%%">
+  <link rel="icon" href="img/logo.jpg">
+  <link rel="apple-touch-icon" href="img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="%%FUENTES_URL%%">
+  <link rel="stylesheet" href="styles.css">
+  <!-- SEO:HEAD (lo escribe scripts/build.mjs: canonical, Open Graph y datos estructurados) -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <!-- Iconos -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 9.2c.3 2.6 2.7 5 5.3 5.3l1.2-1.4-2-1-.9.7a4 4 0 0 1-1.8-1.8l.7-.9-1-2-1.5 1.1Z" fill="currentColor"/></symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 9h5l3 3v4h-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="currentColor"/><circle cx="17" cy="17.5" r="1.8" fill="currentColor"/></symbol>
+      <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 10v10h16V10M3 10l2-6h14l2 6M3 10h18M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9H4zM10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M18 14v6H4V6h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="17.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m8 8 12 9M8 16 20 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#catalogo">Ir al catálogo</a>
+
+  <!-- BARRA SUPERIOR -->
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="brand" href="#inicio" aria-label="%%NOMBRE%%, inicio">
+        <img src="img/logo.jpg" alt="" width="44" height="44">
+        <span class="brand__t">%%MARCA_A%% <b>%%MARCA_B%%</b></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#catalogo">El álbum</a>
+        <a href="#como">Cómo comprar</a>
+        <a href="#envios">Envíos</a>
+      </nav>
+      <button class="bagbtn" type="button" data-open-bag aria-label="Abrir mi bolsa">
+        <svg class="ic"><use href="#i-bag"/></svg>
+        <span class="bagbtn__n" id="bagCount" hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- PORTADA -->
+    <section class="hero">
+      <div class="wrap hero__in">
+        <div class="hero__copy">
+          <p class="label hero__tag"><span></span> Nueva temporada · Nº 35 al 40</p>
+          <h1><span data-split>%%HERO_TITULO%%</span> <em data-split>%%HERO_DESTACADO%%</em></h1>
+          <p class="hero__lead">%%HERO_BAJADA%%</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary btn--lg" href="#catalogo" data-magnet>Ver el álbum <svg class="ic"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--wa btn--lg" id="contactWaBtn" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> Hablar por WhatsApp</a>
+          </div>
+          <ul class="facts" aria-label="Datos de la tienda">
+            <li><b>%%SEGUIDORES%%</b><span>seguidoras en Instagram</span></li>
+            <li><b data-count="%%NMODELOS%%">%%NMODELOS%%</b><span>modelos en este álbum</span></li>
+            <li><b>%%DESDE%%</b><span>el par, desde</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__box" aria-label="Fotos de nuestros modelos">
+          <div class="box__lid"><span class="label">Ambar Shoes · Mod. SA</span><span class="label">Frágil ↑</span></div>
+          <div class="belt">
+            <!-- HERO:FOTOS -->
+          </div>
+          <img class="seal" src="img/logo.jpg" alt="" width="96" height="96">
+        </div>
+      </div>
+    </section>
+
+    <!-- CINTA DE EMBALAJE -->
+    <div class="tape" aria-hidden="true">
+      <div class="tape__track" style="--seg:%%CINTA_SEG%%s"><!-- CINTA --></div>
+    </div>
+
+    <!-- Promos (cupones de la portada) -->
+    <section class="promos wrap" aria-labelledby="promosT">
+      <div class="promos__head" data-reveal>
+        <p class="label">Combina y ahorra</p>
+        <h2 id="promosT">Pagas menos mientras más llevas</h2>
+      </div>
+      <ul class="promos__list" data-reveal>
+        <!-- PROMOS -->
+      </ul>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="catalog wrap" id="catalogo" aria-labelledby="catT">
+      <div class="catalog__head" data-reveal>
+        <div>
+          <p class="label">El álbum de la temporada</p>
+          <h2 id="catT">Elige tu par</h2>
+        </div>
+        <p class="catalog__count" id="count" aria-live="polite"></p>
+      </div>
+      <div class="catalog__bar" data-reveal>
+        <div class="tabs" id="filters" role="tablist" aria-label="Filtrar por tipo"></div>
+        <label class="sort">Ordenar
+          <select id="sort">
+            <option value="destacados">Destacados</option>
+            <option value="precio-asc">Menor precio</option>
+            <option value="precio-desc">Mayor precio</option>
+          </select>
+        </label>
+      </div>
+      <div class="grid" id="productGrid">
+        <!-- SEO:PRODUCTOS -->
+      </div>
+      <p class="ask" data-reveal>¿No ves tu número o buscas otro modelo? <button type="button" data-encargo>Pregúntanos por interno</button></p>
+    </section>
+
+    <!-- CÓMO COMPRAR -->
+    <section class="how" id="como" aria-labelledby="howT">
+      <div class="wrap">
+        <div class="how__head" data-reveal>
+          <p class="label">Fácil y por WhatsApp</p>
+          <h2 id="howT">Cómo comprar en 4 pasos</h2>
+        </div>
+        <ol class="steps">
+          <li data-reveal style="--i:0"><span class="steps__n">1</span><h3>Elige tu modelo</h3><p>Mira el álbum y toca el par que te gusta. Cada ficha dice la horma.</p></li>
+          <li data-reveal style="--i:1"><span class="steps__n">2</span><h3>Escoge tu número</h3><p>Disponible del 35 al 40. Si la horma es pequeña, te recomendamos subir un número.</p></li>
+          <li data-reveal style="--i:2"><span class="steps__n">3</span><h3>Manda el pedido</h3><p>Armas tu bolsa y el mensaje llega listo a nuestro WhatsApp, con tus datos de envío.</p></li>
+          <li data-reveal style="--i:3"><span class="steps__n">4</span><h3>Pagas y te lo enviamos</h3><p>Confirmamos stock, pagas y lo despachamos a todo Chile.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ENVÍOS Y CONFIANZA -->
+    <section class="ship wrap" id="envios" aria-labelledby="shipT">
+      <div class="ship__copy" data-reveal>
+        <p class="label">Tienda 100% online</p>
+        <h2 id="shipT">Te lo llevamos donde estés</h2>
+        <p>Despachamos a todo Chile con las empresas de siempre. Eliges retiro en sucursal o a domicilio y el costo del envío te lo cotizamos por WhatsApp según tu comuna.</p>
+        <ul class="ship__rules">
+          <li><svg class="ic"><use href="#i-check"/></svg> Confirmamos número, horma y stock antes de que pagues</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> No hacemos cambios ni devoluciones: revisa tu número con calma</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Tienda física cerrada: todo se atiende por mensaje</li>
+        </ul>
+        <a class="btn btn--ghost" href="https://www.instagram.com/%%INSTAGRAM%%/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ig"/></svg> Mira las historias de clientas</a>
+      </div>
+      <ul class="couriers" data-reveal aria-label="Empresas de envío">
+        <li><span>Envío por</span><strong>Blue Express</strong></li>
+        <li><span>Envío por</span><strong>Starken</strong></li>
+        <li><span>Envío por</span><strong>Correos de Chile</strong></li>
+        <li class="couriers__box"><svg class="ic"><use href="#i-truck"/></svg><span>A todo Chile</span></li>
+      </ul>
+    </section>
+
+    <!-- CIERRE -->
+    <section class="close">
+      <div class="wrap close__in" data-reveal>
+        <h2>¿Cuál es tu número?</h2>
+        <p>Escríbenos y te decimos qué modelos quedan en tu talla.</p>
+        <a class="btn btn--primary btn--lg" id="contactWa" target="_blank" rel="noopener" data-magnet><svg class="ic"><use href="#i-chat"/></svg> Preguntar por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <a class="brand brand--foot" href="#inicio"><img src="img/logo.jpg" alt="" width="44" height="44"><span class="brand__t">%%MARCA_A%% <b>%%MARCA_B%%</b></span></a>
+      <p class="foot__t">%%RUBRO%% · %%ENVIOS%%</p>
+      <p class="foot__links">
+        <a href="https://www.instagram.com/%%INSTAGRAM%%/" target="_blank" rel="noopener">@%%INSTAGRAM%%</a>
+        <a id="footerWa" target="_blank" rel="noopener">WhatsApp</a>
+      </p>
+      <p class="foot__small">Página de muestra preparada por RunClick Webs.</p>
+    </div>
+  </footer>
+
+  <a class="wa-float" id="floatWa" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="ic"><use href="#i-chat"/></svg></a>
+
+  <!-- FICHA DEL PRODUCTO -->
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel pm" role="dialog" aria-modal="true" aria-labelledby="pmName">
+      <button class="modal__close" type="button" data-close aria-label="Cerrar">×</button>
+      <div class="pm__media">
+        <div class="pm__frame">
+          <img id="pmImg" src="img/logo.jpg" alt="">
+          <button class="pm__nav pm__nav--prev" type="button" data-step-photo="-1" aria-label="Foto anterior">‹</button>
+          <button class="pm__nav pm__nav--next" type="button" data-step-photo="1" aria-label="Foto siguiente">›</button>
+        </div>
+        <div class="pm__thumbs" id="pmThumbs"></div>
+      </div>
+      <div class="pm__info">
+        <p class="label" id="pmCat"></p>
+        <h2 id="pmName"></h2>
+        <p class="pm__price" id="pmPrice"></p>
+        <p class="pm__desc" id="pmDesc"></p>
+        <div id="pmSizesWrap">
+          <p class="pm__label">Número <span id="pmSizeHint"></span></p>
+          <div class="pm__sizes" id="pmSizes" role="radiogroup" aria-label="Elige tu número"></div>
+        </div>
+        <div class="pm__qty">
+          <p class="pm__label">Cantidad</p>
+          <div class="qty qty--lg">
+            <button type="button" data-qty="-1" aria-label="Menos">−</button>
+            <span id="pmQty">1</span>
+            <button type="button" data-qty="1" aria-label="Más">+</button>
+          </div>
+        </div>
+        <p class="form__error" id="pmError" hidden></p>
+        <button class="btn btn--primary btn--block btn--lg" type="button" id="pmAdd"><svg class="ic"><use href="#i-bag"/></svg> Agregar a la bolsa</button>
+        <a class="btn btn--ghost btn--block" id="pmAsk" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOLSA + PEDIDO -->
+  <aside class="bag" id="bag" aria-hidden="true">
+    <div class="bag__backdrop" data-close-bag></div>
+    <div class="bag__panel" role="dialog" aria-modal="true" aria-labelledby="bagTitle">
+      <header class="bag__head">
+        <h2 id="bagTitle">Tu pedido</h2>
+        <button class="modal__close" type="button" data-close-bag aria-label="Cerrar">×</button>
+      </header>
+      <div class="bag__body">
+        <div class="bag__empty" id="bagEmpty">
+          <svg class="ic"><use href="#i-bag"/></svg>
+          <p>Tu bolsa está vacía. Agrega un par del álbum o cuéntanos qué buscas aquí abajo.</p>
+          <a class="btn btn--ghost btn--sm" href="#catalogo" data-close-bag>Ver el álbum</a>
+        </div>
+        <ul class="bag__list" id="bagList"></ul>
+
+        <div class="coupon" id="couponBox" hidden>
+          <div id="cuponForm">
+            <label class="pm__label" for="fCupon">¿Tienes un código de descuento?</label>
+            <div class="coupon__row">
+              <input id="fCupon" type="text" placeholder="Ej: AMBAR10" autocomplete="off" autocapitalize="characters" spellcheck="false">
+              <button class="btn btn--ghost btn--sm" type="button" id="cuponBtn">Aplicar</button>
+            </div>
+          </div>
+          <div class="coupon__status" id="cuponStatus" role="status" aria-live="polite" hidden></div>
+        </div>
+
+        <form id="orderForm" class="checkout" novalidate>
+          <details class="encargo" id="encargoBox">
+            <summary>¿Buscas otro modelo o número? <strong>Cuéntanos</strong></summary>
+            <textarea id="fEncargo" rows="2" placeholder="Ej: Botín calcetín negro Nº 38 · Zapatilla blanca Nº 37"></textarea>
+          </details>
+
+          <p class="checkout__step"><span>1</span> Tus datos</p>
+          <label>Nombre y apellido
+            <input id="fNombre" type="text" autocomplete="name" placeholder="Ej: Camila Rojas">
+          </label>
+
+          <p class="checkout__step"><span>2</span> Envío</p>
+          <div class="ship-form">
+            <div class="row">
+              <label>Región
+                <select id="fRegion"><option value="">Elige tu región</option></select>
+              </label>
+              <label>Comuna
+                <select id="fComuna" disabled><option value="">Primero la región</option></select>
+              </label>
+            </div>
+            <p class="pm__label">Empresa de envío</p>
+            <div class="seg couriers-seg" id="fCourier" role="radiogroup" aria-label="Empresa de envío"></div>
+            <div class="seg seg--2" role="radiogroup" aria-label="Modalidad de envío">
+              <label><input type="radio" name="modo" value="sucursal" checked><span><svg class="ic"><use href="#i-store"/></svg>Retiro en sucursal</span></label>
+              <label><input type="radio" name="modo" value="domicilio"><span><svg class="ic"><use href="#i-home"/></svg>A domicilio</span></label>
+            </div>
+            <label data-modo="sucursal">Sucursal donde retiras
+              <input id="fSucursal" type="text" placeholder="Nombre o dirección de la sucursal">
+            </label>
+            <a class="locator" id="fLocator" data-modo="sucursal" target="_blank" rel="noopener"></a>
+            <label data-modo="domicilio" hidden>Dirección de entrega
+              <input id="fDireccion" type="text" autocomplete="street-address" placeholder="Calle, número, depto">
+            </label>
+          </div>
+
+          <p class="checkout__step"><span>3</span> Pago</p>
+          <div class="seg seg--2" role="radiogroup" aria-label="Medio de pago">
+            <label><input type="radio" name="pago" value="transferencia" checked><span>Transferencia</span></label>
+            <label><input type="radio" name="pago" value="tarjeta"><span>Débito / Crédito</span></label>
+          </div>
+
+          <label>Comentario <small>(opcional)</small>
+            <input id="fNota" type="text" placeholder="Ej: si no hay mi número, avísame antes de enviar">
+          </label>
+
+          <div class="preview">
+            <p class="preview__label">Así llegará tu mensaje</p>
+            <div id="msgPreview"></div>
+          </div>
+        </form>
+      </div>
+      <footer class="bag__foot">
+        <div class="bag__sums" id="bagSums" hidden></div>
+        <div class="bag__total"><span id="bagTotalLabel">Total</span><strong id="bagTotal">$0</strong></div>
+        <p class="bag__hint" id="bagHint"></p>
+        <p class="form__error" id="formError" hidden></p>
+        <button class="btn btn--wa btn--block btn--lg" type="submit" form="orderForm"><svg class="ic"><use href="#i-chat"/></svg> Enviar pedido por WhatsApp</button>
+        <p class="bag__legal">Sin cambios ni devoluciones: confirma tu número antes de pagar.</p>
+      </footer>
+    </div>
+  </aside>
+
+  <button class="fab" type="button" data-open-bag hidden><svg class="ic"><use href="#i-bag"/></svg><span id="fabLabel">Mi bolsa</span></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" charset="utf-8"></script>
+</body>
+</html>

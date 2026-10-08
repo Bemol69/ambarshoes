@@ -1,0 +1,17 @@
+{
+  "nombre": "Botín Plataforma · Tachas",
+  "precio": 24900,
+  "foto": "/img/productos/botin-plataforma-tachas.jpg",
+  "fotos": [
+    "/img/productos/botin-plataforma-tachas-2.jpg"
+  ],
+  "descripcion": "Eco cuero negro con plataforma y tachas. Único par en stock, talla 39.",
+  "tallas": [
+    "39"
+  ],
+  "incluye": [],
+  "etiqueta": "Único par",
+  "orden": 60,
+  "agotado": false,
+  "visible": true
+}

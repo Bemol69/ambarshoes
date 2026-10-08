@@ -1,0 +1,292 @@
+{
+  "_aviso": "Archivo generado por scripts/build.mjs. No editar a mano.",
+  "categorias": [
+    {
+      "id": "plataformas",
+      "nombre": "Plataformas",
+      "productos": [
+        "bota-cana-alta-plataforma",
+        "botin-calcetin-crema-tachas",
+        "botin-plataforma-tachas",
+        "botin-2-en-1-cadena"
+      ]
+    },
+    {
+      "id": "gamuza",
+      "nombre": "Gamuza",
+      "productos": [
+        "botin-gamuza-negro-doblez",
+        "botin-calcetin-gamuza-negro",
+        "botin-gamuza-hebillas"
+      ]
+    },
+    {
+      "id": "calcetin",
+      "nombre": "Calcetín",
+      "productos": [
+        "botin-calcetin-gamuza-negro",
+        "botin-calcetin-eco-cuero-negro",
+        "botin-calcetin-crema-tachas"
+      ]
+    },
+    {
+      "id": "zapatillas",
+      "nombre": "Zapatillas",
+      "productos": [
+        "zapatilla-borrego-camel",
+        "zapatilla-duppe-zara-blanca"
+      ]
+    }
+  ],
+  "productos": [
+    {
+      "id": "bota-cana-alta-plataforma",
+      "nombre": "Bota Caña Alta · Plataforma",
+      "precio": 28900,
+      "foto": "img/productos/bota-cana-alta-plataforma.jpg",
+      "fotos": [
+        "img/productos/bota-cana-alta-plataforma-2.jpg"
+      ],
+      "tallas": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "descripcion": "Eco cuero, horma normal. Caña alta con plataforma para marcar el paso.",
+      "incluye": [],
+      "etiqueta": "Premium",
+      "agotado": false,
+      "mini": "img/_opt/b31065bd4e57-640.webp",
+      "minis": [
+        "img/_opt/5b47f4fd6b61-640.webp"
+      ]
+    },
+    {
+      "id": "botin-gamuza-negro-doblez",
+      "nombre": "Botín Gamuza Negro · Doblez",
+      "precio": 24900,
+      "foto": "img/productos/botin-gamuza-negro-doblez.jpg",
+      "fotos": [
+        "img/productos/botin-gamuza-negro-doblez-2.jpg"
+      ],
+      "tallas": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "descripcion": "Gamuza con cierre interior, horma normal. Modelaso en black.",
+      "incluye": [],
+      "etiqueta": "",
+      "agotado": false,
+      "mini": "img/_opt/c945de08a73b-640.webp",
+      "minis": [
+        "img/_opt/a84d5c8081ad-640.webp"
+      ]
+    },
+    {
+      "id": "botin-calcetin-gamuza-negro",
+      "nombre": "Botín Calcetín Gamuza · Negro",
+      "precio": 24900,
+      "foto": "img/productos/botin-calcetin-gamuza-negro.jpg",
+      "fotos": [
+        "img/productos/botin-calcetin-gamuza-negro-2.jpg"
+      ],
+      "tallas": [
+        "36",
+        "38",
+        "39",
+        "40"
+      ],
+      "descripcion": "Furor de alto impacto: gamuza, caña calcetín y suela trac. Horma normal.",
+      "incluye": [],
+      "etiqueta": "Últimos pares",
+      "agotado": false,
+      "mini": "img/_opt/1dd668a6cf6c-640.webp",
+      "minis": [
+        "img/_opt/23915feb4ced-640.webp"
+      ]
+    },
+    {
+      "id": "botin-calcetin-eco-cuero-negro",
+      "nombre": "Botín Calcetín Eco Cuero · Negro",
+      "precio": 24900,
+      "foto": "img/productos/botin-calcetin-eco-cuero-negro.jpg",
+      "fotos": [
+        "img/productos/botin-calcetin-eco-cuero-negro-2.jpg"
+      ],
+      "tallas": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "descripcion": "El eco cuero es lo mejor de la temporada. Horma normal.",
+      "incluye": [],
+      "etiqueta": "",
+      "agotado": false,
+      "mini": "img/_opt/6d211a10b2dc-640.webp",
+      "minis": [
+        "img/_opt/cb42d370b5db-640.webp"
+      ]
+    },
+    {
+      "id": "botin-calcetin-crema-tachas",
+      "nombre": "Botín Calcetín Crema · Tachas",
+      "precio": 24900,
+      "foto": "img/productos/botin-calcetin-crema-tachas.jpg",
+      "fotos": [
+        "img/productos/botin-calcetin-crema-tachas-2.jpg"
+      ],
+      "tallas": [
+        "37",
+        "39",
+        "40"
+      ],
+      "descripcion": "9 cm de plataforma, eco cuero, horma normal.",
+      "incluye": [],
+      "etiqueta": "Últimos pares",
+      "agotado": false,
+      "mini": "img/_opt/1547b865da0a-640.webp",
+      "minis": [
+        "img/_opt/6ba5e1b052e2-640.webp"
+      ]
+    },
+    {
+      "id": "botin-plataforma-tachas",
+      "nombre": "Botín Plataforma · Tachas",
+      "precio": 24900,
+      "foto": "img/productos/botin-plataforma-tachas.jpg",
+      "fotos": [
+        "img/productos/botin-plataforma-tachas-2.jpg"
+      ],
+      "tallas": [
+        "39"
+      ],
+      "descripcion": "Eco cuero negro con plataforma y tachas. Único par en stock, talla 39.",
+      "incluye": [],
+      "etiqueta": "Único par",
+      "agotado": false,
+      "mini": "img/_opt/fb8d8547bac8-640.webp",
+      "minis": [
+        "img/_opt/6c58f80072f0-640.webp"
+      ]
+    },
+    {
+      "id": "botin-2-en-1-cadena",
+      "nombre": "Botín 2 en 1 · Cadena",
+      "precio": 19900,
+      "foto": "img/productos/botin-2-en-1-cadena.jpg",
+      "fotos": [
+        "img/productos/botin-2-en-1-cadena-2.jpg"
+      ],
+      "tallas": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "descripcion": "Modelo 2 en 1: úsalo como quieras. Eco cuero, horma normal.",
+      "incluye": [],
+      "etiqueta": "Reposición",
+      "agotado": false,
+      "mini": "img/_opt/3e79b127a174-640.webp",
+      "minis": [
+        "img/_opt/5403161231db-640.webp"
+      ]
+    },
+    {
+      "id": "botin-gamuza-hebillas",
+      "nombre": "Botín Gamuza Negro · Hebillas",
+      "precio": 19900,
+      "foto": "img/productos/botin-gamuza-hebillas.jpg",
+      "fotos": [
+        "img/productos/botin-gamuza-hebillas-2.jpg"
+      ],
+      "tallas": [
+        "36",
+        "37",
+        "38",
+        "39"
+      ],
+      "descripcion": "Símil gamuza negro con hebillas y tachas, horma normal. En oferta.",
+      "incluye": [],
+      "etiqueta": "Oferta",
+      "agotado": false,
+      "mini": "img/_opt/1408c75c1719-640.webp",
+      "minis": [
+        "img/_opt/96ff56d901a8-640.webp"
+      ]
+    },
+    {
+      "id": "zapatilla-borrego-camel",
+      "nombre": "Zapatilla Borrego · Camel",
+      "precio": 12900,
+      "foto": "img/productos/zapatilla-borrego-camel.jpg",
+      "fotos": [
+        "img/productos/zapatilla-borrego-camel-2.jpg"
+      ],
+      "tallas": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "descripcion": "El más pedido ha vuelto. Con cordones de repuesto, horma normal.",
+      "incluye": [],
+      "etiqueta": "Más pedido",
+      "agotado": false,
+      "mini": "img/_opt/7b9bae52ad9a-640.webp",
+      "minis": [
+        "img/_opt/bdc078d191ff-640.webp"
+      ]
+    },
+    {
+      "id": "zapatilla-duppe-zara-blanca",
+      "nombre": "Zapatilla Duppe Zara · Blanca",
+      "precio": 16900,
+      "foto": "img/productos/zapatilla-duppe-zara-blanca.jpg",
+      "fotos": [
+        "img/productos/zapatilla-duppe-zara-blanca-2.jpg"
+      ],
+      "tallas": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "descripcion": "Duppe Zara en blanco, horma normal. Va con todo.",
+      "incluye": [],
+      "etiqueta": "",
+      "agotado": false,
+      "mini": "img/_opt/c8ff23497151-640.webp",
+      "minis": [
+        "img/_opt/c2deb0dc45c4-640.webp"
+      ]
+    }
+  ],
+  "cupones": [
+    {
+      "h": "b99bb2e29db2d29857acb9839c176f066ddae4540e5230230fd47b1374f9743a",
+      "titulo": "Bienvenida 10% (demo)",
+      "tipo": "porcentaje",
+      "valor": 10,
+      "minimo": 0,
+      "vence": "",
+      "productos": null,
+      "aplica": "Toda la tienda"
+    }
+  ]
+}

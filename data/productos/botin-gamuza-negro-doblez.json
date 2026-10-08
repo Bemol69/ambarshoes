@@ -1,0 +1,22 @@
+{
+  "nombre": "Botín Gamuza Negro · Doblez",
+  "precio": 24900,
+  "foto": "/img/productos/botin-gamuza-negro-doblez.jpg",
+  "fotos": [
+    "/img/productos/botin-gamuza-negro-doblez-2.jpg"
+  ],
+  "descripcion": "Gamuza con cierre interior, horma normal. Modelaso en black.",
+  "tallas": [
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40"
+  ],
+  "incluye": [],
+  "etiqueta": "",
+  "orden": 20,
+  "agotado": false,
+  "visible": true
+}

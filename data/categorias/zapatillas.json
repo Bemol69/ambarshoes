@@ -1,0 +1,9 @@
+{
+  "nombre": "Zapatillas",
+  "productos": [
+    "zapatilla-borrego-camel",
+    "zapatilla-duppe-zara-blanca"
+  ],
+  "orden": 40,
+  "visible": true
+}

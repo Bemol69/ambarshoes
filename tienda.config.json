@@ -1,0 +1,24 @@
+{
+  "_ayuda": "Datos fijos de la tienda (los define el desarrollador). Los datos de contacto y portada van en data/ajustes.json, que el cliente edita desde /admin.",
+  "nombre": "Ambar Shoes",
+  "marca_a": "Ambar",
+  "marca_b": "Shoes",
+  "rubro": "Zapatos de tendencia y plataformas",
+  "schema_tipo": "ShoeStore",
+  "seo_titulo": "Zapatos de tendencia y plataformas | Ambar Shoes · Envíos a todo Chile",
+  "seo_descripcion": "Botines, plataformas y zapatillas de tendencia desde $12.900. Eco cuero y gamuza, tallas 35 al 40, combos 2x$28.000 y envíos a todo Chile por Blue Express, Starken y Correos de Chile.",
+  "github_repo": "Bemol69/ambarshoes",
+  "site_url": "https://ambarshoes.vercel.app",
+  "google_verificacion": "",
+  "fuentes": { "titulos": "Unbounded", "texto": "Hanken Grotesk", "etiqueta": "Space Mono" },
+  "colores": {
+    "kraft": "#C9A06B",
+    "kraft_oscuro": "#A37A47",
+    "kraft_claro": "#E9D6B5",
+    "tinta": "#15110D",
+    "tinta_suave": "#5E4E3B",
+    "papel": "#FBF6EA",
+    "dorado": "#C9A24B",
+    "precio": "#FFD23F"
+  }
+}

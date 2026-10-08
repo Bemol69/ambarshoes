@@ -1,0 +1,10 @@
+{
+  "nombre": "Gamuza",
+  "productos": [
+    "botin-gamuza-negro-doblez",
+    "botin-calcetin-gamuza-negro",
+    "botin-gamuza-hebillas"
+  ],
+  "orden": 20,
+  "visible": true
+}

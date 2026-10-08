@@ -1,0 +1,7 @@
+{
+  "promos": [
+    { "titulo": "1 par", "precio": 16900, "texto": "Modelos en oferta, tú eliges" },
+    { "titulo": "2 pares", "precio": 28000, "texto": "Combínalos como quieras" },
+    { "titulo": "Todo el álbum", "precio": 18900, "texto": "Cualquier modelo del álbum" }
+  ]
+}

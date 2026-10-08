@@ -1,0 +1,22 @@
+{
+  "nombre": "Zapatilla Duppe Zara · Blanca",
+  "precio": 16900,
+  "foto": "/img/productos/zapatilla-duppe-zara-blanca.jpg",
+  "fotos": [
+    "/img/productos/zapatilla-duppe-zara-blanca-2.jpg"
+  ],
+  "descripcion": "Duppe Zara en blanco, horma normal. Va con todo.",
+  "tallas": [
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40"
+  ],
+  "incluye": [],
+  "etiqueta": "",
+  "orden": 100,
+  "agotado": false,
+  "visible": true
+}

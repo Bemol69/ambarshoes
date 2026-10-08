@@ -1,0 +1,22 @@
+{
+  "nombre": "Botín Calcetín Eco Cuero · Negro",
+  "precio": 24900,
+  "foto": "/img/productos/botin-calcetin-eco-cuero-negro.jpg",
+  "fotos": [
+    "/img/productos/botin-calcetin-eco-cuero-negro-2.jpg"
+  ],
+  "descripcion": "El eco cuero es lo mejor de la temporada. Horma normal.",
+  "tallas": [
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40"
+  ],
+  "incluye": [],
+  "etiqueta": "",
+  "orden": 40,
+  "agotado": false,
+  "visible": true
+}
